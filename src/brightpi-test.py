@@ -1,35 +1,45 @@
 #!/usr/bin/python3
 # Demo code showing main and subclass and various methods invocation
 
-import brightpi
+from brightpi.brightpilib import (
+    BrightPi,
+    BrightPiSpecialEffects,
+    ON,
+    OFF,
+    LED_IR,
+    LED_WHITE,
+    LED1,
+    LED2,
+    LED3,
+)
 import time
 
-brightPi = brightpi.BrightPi()
-brightSpecial = brightpi.BrightPiSpecialEffects()
+brightPi = BrightPi()
+brightSpecial = BrightPiSpecialEffects()
 
 leds = (1, 3)
 brightSpecial.reset()
 
-brightSpecial.set_led_on_off(leds, brightpi.ON)
+brightSpecial.set_led_on_off(leds, ON)
 time.sleep(2)
 print(brightSpecial)
 
 time.sleep(2)
 
-brightSpecial.set_led_on_off(brightpi.LED_WHITE, brightpi.OFF)
-brightSpecial.set_led_on_off(brightpi.LED_IR, brightpi.ON)
+brightSpecial.set_led_on_off(LED_WHITE, OFF)
+brightSpecial.set_led_on_off(LED_IR, ON)
 brightSpecial.set_gain(9)
 print(brightSpecial)
 time.sleep(2)
 
-brightSpecial.set_led_on_off(brightpi.LED1, brightpi.ON)
+brightSpecial.set_led_on_off(LED1, ON)
 print(brightSpecial)
 
 time.sleep(2)
 
 brightSpecial.set_gain(2)
-brightSpecial.set_led_on_off(brightpi.LED3, brightpi.ON)
-brightSpecial.set_led_dim(brightpi.LED3, 10)
+brightSpecial.set_led_on_off(LED3, ON)
+brightSpecial.set_led_dim(LED3, 10)
 print(brightSpecial)
 
 time.sleep(2)
@@ -59,39 +69,39 @@ brightSpecial.alt_flash(5, 0.2)
 brightSpecial.alt_flash(5, 0.2, "h")
 brightSpecial.alt_flash(5, 0.2, "x")
 
-brightPi.reset()
+brightSpecial.reset()
 
-brightPi.set_led_on_off(leds, brightpi.ON)
+brightSpecial.set_led_on_off(leds, ON)
 
-leds = brightpi.LED_IR
-brightPi.set_led_on_off(leds, brightpi.OFF)
+leds = LED_IR
+brightSpecial.set_led_on_off(leds, OFF)
 print(brightPi)
 time.sleep(1)
 
-leds = brightpi.LED_WHITE
-brightPi.set_led_on_off(leds, brightpi.ON)
+leds = LED_WHITE
+brightSpecial.set_led_on_off(leds, ON)
 print(brightPi)
 time.sleep(1)
 
-leds = brightpi.LED_WHITE
-brightPi.set_led_on_off(leds, brightpi.OFF)
+leds = LED_WHITE
+brightSpecial.set_led_on_off(leds, OFF)
 print(brightPi)
 time.sleep(1)
 
-leds = brightpi.LED2
-brightPi.set_led_on_off(leds, brightpi.ON)
+leds = LED2
+brightSpecial.set_led_on_off(leds, ON)
 print(brightPi)
 time.sleep(1)
 
 leds = [1, 2, 3, 4, 5, 6, 7, 8]
-brightPi.set_led_on_off(leds, brightpi.OFF)
+brightSpecial.set_led_on_off(leds, OFF)
 print(brightPi)
 
 for led in range(0, 8):
-    brightPi.set_led_on_off((led + 1,), brightpi.ON)
+    brightSpecial.set_led_on_off((led + 1,), ON)
     print(brightPi)
     time.sleep(1)
 
 leds = [1, 2, 3, 4, 5, 6, 7, 8]
-brightPi.set_led_on_off(leds, brightpi.OFF)
+brightSpecial.set_led_on_off(leds, OFF)
 print(brightPi)
