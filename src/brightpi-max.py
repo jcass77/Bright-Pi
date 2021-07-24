@@ -24,7 +24,7 @@ brightPi.set_led_on_off(LED_ALL, ON)  # Turn LED's on
 
 print(f"Setting LED's to max brightness ({BrightPi._max_dim})...")
 dim = 0x00 + 1
-while dim < BrightPi._max_dim:
+while dim <= BrightPi._max_dim:
     brightPi.set_led_dim(LED_ALL, dim)
     dim += 1
     time.sleep(0.1)
