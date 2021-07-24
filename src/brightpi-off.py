@@ -14,7 +14,7 @@ else:
     while dim >= 0x00:
         brightPi.set_led_dim(LED_ALL, dim)
         dim -= 1
-        time.sleep(0.1)
+        time.sleep(0.05)
 
     brightPi.set_led_on_off(LED_ALL, OFF)
 
