@@ -6,6 +6,13 @@ from brightpi.brightpilib import BrightPi, LED_ALL, ON
 
 brightPi = BrightPi()
 
+if (
+    brightPi.get_gain() == BrightPi._max_gain
+    and BrightPi.get_led_on_off(LED_ALL, ON)
+    and all(dim == BrightPi._max_dim for dim in BrightPi.get_led_dim())
+):
+    print("BrightPi is already at max! Skipping...")
+
 brightPi.set_gain(BrightPi._max_gain)
 
 brightPi.set_led_dim(LED_ALL, 0x00)  # Lowest brightness setting

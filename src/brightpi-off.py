@@ -6,6 +6,9 @@ from brightpi.brightpilib import BrightPi, LED_ALL, OFF
 
 brightPi = BrightPi()
 
+if brightPi.set_led_on_off(LED_ALL, OFF):
+    print("BrightPi is already switched off! Skipping...")
+
 print("Dimming LED's...")
 dim = BrightPi._max_dim
 while dim > 0x00:
