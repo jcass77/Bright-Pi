@@ -2,7 +2,7 @@
 # Turn on all LEDs and set brightness to max.
 import time
 
-from brightpi.brightpilib import BrightPi, LED_ALL, ON
+from brightpi.brightpilib import BrightPi, LED_ALL, ON, OFF
 
 brightPi = BrightPi()
 
@@ -12,7 +12,7 @@ print("DEBUG (dim): ", brightPi.get_led_dim())
 
 if (
     brightPi.get_gain() == BrightPi._max_gain
-    and all(state == ON for state in brightPi.get_led_on_off(LED_ALL))
+    and all(state != OFF for state in brightPi.get_led_on_off(LED_ALL))
     and all(dim == BrightPi._max_dim for dim in brightPi.get_led_dim())
 ):
     print("BrightPi is already at max! Skipping...")
@@ -30,3 +30,4 @@ while dim < BrightPi._max_dim:
     time.sleep(0.1)
 
 print("BrightPi is at max!")
+print("DEBUG (gain): ", brightPi.get_gain())
