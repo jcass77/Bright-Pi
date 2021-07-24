@@ -9,7 +9,7 @@ brightPi = BrightPi()
 print(f"Setting gain to max ({BrightPi._max_gain})...")
 brightPi.set_gain(BrightPi._max_gain)
 
-brightPi.set_led_dim(LED_ALL, 0x00)
+brightPi.set_led_dim(LED_ALL, 0x00)  # Lowest brightness setting
 
 print("Turning on LED's...")
 brightPi.set_led_on_off(LED_IR, ON)
