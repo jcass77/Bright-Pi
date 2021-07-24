@@ -6,6 +6,10 @@ from brightpi.brightpilib import BrightPi, LED_ALL, ON
 
 brightPi = BrightPi()
 
+print("DEBUG (gain): ", brightPi.get_gain())
+print("DEBUG (state): ", brightPi.get_led_on_off(LED_ALL))
+print("DEBUG (dim): ", brightPi.get_led_dim())
+
 if (
     brightPi.get_gain() == BrightPi._max_gain
     and all(state == ON for state in brightPi.get_led_on_off(LED_ALL))
