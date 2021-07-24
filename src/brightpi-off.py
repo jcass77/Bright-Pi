@@ -8,17 +8,17 @@ brightPi = BrightPi()
 
 if all(state == ON for state in brightPi.get_led_on_off(LED_ALL)):
     print("BrightPi is already switched off! Skipping...")
+else:
+    print("Dimming LED's...")
+    dim = BrightPi._max_dim - 1
+    while dim >= 0x00:
+        brightPi.set_led_dim(LED_ALL, dim)
+        dim -= 1
+        time.sleep(0.1)
 
-print("Dimming LED's...")
-dim = BrightPi._max_dim - 1
-while dim >= 0x00:
-    brightPi.set_led_dim(LED_ALL, dim)
-    dim -= 1
-    time.sleep(0.1)
+    brightPi.set_led_on_off(LED_ALL, OFF)
 
-brightPi.set_led_on_off(LED_ALL, OFF)
+    print("Resetting BrightPi...")
+    brightPi.reset()
 
-print("Resetting BrightPi...")
-brightPi.reset()
-
-print("BrightPi has been turned off!")
+    print("BrightPi has been turned off!")
