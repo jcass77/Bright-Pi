@@ -6,7 +6,7 @@ from brightpi.brightpilib import BrightPi, LED_ALL, ON, OFF
 
 brightPi = BrightPi()
 
-if all(state == ON for state in brightPi.get_led_on_off(LED_ALL)):
+if all(state == OFF for state in brightPi.get_led_on_off(LED_ALL)):
     print("BrightPi is already switched off! Skipping...")
 else:
     print("Dimming LED's...")
