@@ -15,7 +15,7 @@ brightPi.set_led_dim(LED_ALL, BrightPi._max_dim)
 print("Turning on LED's...")
 brightPi.set_led_on_off(LED_IR, ON)
 for led in LED_WHITE:
-    brightPi.set_led_on_off(led, ON)
+    brightPi.set_led_on_off((led,), ON)
     time.sleep(0.5)
 
 print("BrightPi is at max!")

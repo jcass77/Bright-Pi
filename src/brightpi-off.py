@@ -9,7 +9,7 @@ brightPi = BrightPi()
 print("Turning off LED's...")
 brightPi.set_led_on_off(LED_IR, OFF)
 for led in LED_WHITE:
-    brightPi.set_led_on_off(led, OFF)
+    brightPi.set_led_on_off((led,), OFF)
     time.sleep(0.5)
 
 print("Resetting BrightPi...")
