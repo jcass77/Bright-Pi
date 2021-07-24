@@ -8,7 +8,7 @@ brightPi = BrightPi()
 
 if (
     brightPi.get_gain() == BrightPi._max_gain
-    and BrightPi.get_led_on_off(LED_ALL, ON)
+    and all(state == ON for state in BrightPi.get_led_on_off(LED_ALL))
     and all(dim == BrightPi._max_dim for dim in BrightPi.get_led_dim())
 ):
     print("BrightPi is already at max! Skipping...")
