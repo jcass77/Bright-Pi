@@ -2,7 +2,7 @@
 # Reset BrightPi to default and turn off all LEDs
 import time
 
-from brightpi.brightpilib import BrightPi, LED_ALL
+from brightpi.brightpilib import BrightPi, LED_ALL, OFF
 
 brightPi = BrightPi()
 
@@ -12,6 +12,8 @@ while dim > 0x00:
     dim -= 1
     brightPi.set_led_dim(LED_ALL, dim)
     time.sleep(0.1)
+
+brightPi.set_led_on_off(LED_ALL, OFF)
 
 print("Resetting BrightPi...")
 brightPi.reset()
