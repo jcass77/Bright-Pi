@@ -22,5 +22,6 @@ dim = 0x00
 while dim < BrightPi._max_dim:
     dim += 1
     brightPi.set_led_dim(LED_ALL, dim)
+    time.sleep(0.1)
 
 print("BrightPi is at max!")
