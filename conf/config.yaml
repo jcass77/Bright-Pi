@@ -1,0 +1,9 @@
+events:
+  enabled: True
+  subscriptions:
+  - event: PrintStarted
+    command: /usr/local/bin/brightpi-max.py
+    type: system
+  - event: PrintDone
+    command: /usr/local/bin/brightpi-off.py
+    type: system
