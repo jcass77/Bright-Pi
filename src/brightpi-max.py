@@ -2,14 +2,14 @@
 # Turn on all LEDs and set brightness to max.
 import time
 
-from brightpi.brightpilib import BrightPi, LED_ALL, LED_IR, LED_WHITE, ON
+from brightpi.brightpilib import BrightPi, LED_ALL, ON
 
 brightPi = BrightPi()
 
-print(f"Setting gain to max ({BrightPi._max_gain})...")
 brightPi.set_gain(BrightPi._max_gain)
 
 brightPi.set_led_dim(LED_ALL, 0x00)  # Lowest brightness setting
+brightPi.set_led_on_off(LED_ALL, ON)  # Turn LED's on
 
 print(f"Setting LED's to max brightness ({BrightPi._max_dim})...")
 dim = 0x00

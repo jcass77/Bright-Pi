@@ -6,7 +6,7 @@ from brightpi.brightpilib import BrightPi, LED_ALL
 
 brightPi = BrightPi()
 
-print(f"Dimming LED's...")
+print("Dimming LED's...")
 dim = BrightPi._max_dim
 while dim > 0x00:
     dim -= 1
